@@ -12,14 +12,19 @@ export default function Scene({ params: { name } }) {
     );
   }
 
+  const geometryType = sceneInfo.useCylinder ? 'cylinder' : 'sphere';
+
   return (
     <SceneViewer
+      title={sceneInfo.title}
+      imageSource={sceneInfo.imageSource}
+      geometryType={geometryType}
       scene={({ width, height }) => (
         <PhotosphereScene
           width={width}
           height={height}
           imageSource={sceneInfo.imageSource}
-          useSphere={sceneInfo.useSphere}
+          useCylinder={sceneInfo.useCylinder}
         />
       )}
     />

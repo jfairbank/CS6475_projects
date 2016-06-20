@@ -8,7 +8,7 @@ export default class PhotosphereScene extends Component {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     imageSource: PropTypes.string.isRequired,
-    useSphere: PropTypes.bool,
+    useCylinder: PropTypes.bool,
   };
 
   state = {
@@ -76,7 +76,7 @@ export default class PhotosphereScene extends Component {
       );
     }
 
-    const { width, height, imageSource, useSphere } = this.props;
+    const { width, height, imageSource, useCylinder } = this.props;
 
     return (
       <div ref="wrapper">
@@ -98,18 +98,18 @@ export default class PhotosphereScene extends Component {
             />
 
             <mesh>
-              {useSphere ?
+              {useCylinder ?
+                <cylinderGeometry
+                  radiusTop={50}
+                  radiusBottom={50}
+                  radialSegments={32}
+                  heightSegments={1}
+                /> :
+
                 <sphereGeometry
                   radius={16}
                   widthSegments={128}
                   heightSegments={128}
-                /> :
-
-                <cylinderGeometry
-                  radiusTop={50}
-                  radiusBottom={50}
-                  radiusSegments={20}
-                  heightSegments={32}
                 />
               }
 
