@@ -17,6 +17,7 @@ const offsetHeight = 75;
 
 export default class SceneContainer extends Component {
   static propTypes = {
+    name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     geometryType: PropTypes.string.isRequired,
     imageSource: PropTypes.string.isRequired,
@@ -33,6 +34,14 @@ export default class SceneContainer extends Component {
     this.updateDimensions();
 
     window.addEventListener('resize', this.onWindowResize, false);
+  }
+
+  componentWillUpdate({ name: nextName }) {
+    const { name } = this.props;
+
+    if (name !== nextName) {
+      this.setState({ isViewingImage: false });
+    }
   }
 
   componentWillUnmount() {

@@ -12,9 +12,28 @@ export const scenes = [
   },
 
   {
-    name: 'dslr-front-yard',
+    name: 'dslr-front-yard-sphere',
     imageSource: '/assets/front_yard2.jpg',
-    title: 'DSLR Front Yard',
+    title: 'DSLR Front Yard in Sphere',
+  },
+
+  {
+    name: 'dslr-front-yard-cylinder',
+    imageSource: '/assets/front_yard2.jpg',
+    title: 'DSLR Front Yard in Cylinder',
+    useCylinder: true,
+  },
+
+  {
+    name: 'dslr-pond-sphere',
+    imageSource: '/assets/pond1.jpg',
+    title: 'DSLR Pond in Sphere',
+  },
+
+  {
+    name: 'dslr-pond-cylinder',
+    imageSource: '/assets/pond1.jpg',
+    title: 'DSLR Pond in Cylinder',
     useCylinder: true,
   },
 ];

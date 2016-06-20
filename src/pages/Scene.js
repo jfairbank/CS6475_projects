@@ -16,6 +16,7 @@ export default function Scene({ params: { name } }) {
 
   return (
     <SceneViewer
+      name={sceneInfo.name}
       title={sceneInfo.title}
       imageSource={sceneInfo.imageSource}
       geometryType={geometryType}
